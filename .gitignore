@@ -1,4 +1,17 @@
-# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
+node_modules/
+dist/
+coverage/
+/.env
+.sass-cache/
+.idea/
+.vscode/
+npm-debug.log*
+package-lock.json
+yarn.lock
+.DS_Store
+.cache/
+/.angular
+/.tmp# See https://docs.github.com/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
 # Compiled output
 /dist

@@ -1,0 +1,107 @@
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center bg-[#0a0f1e] relative overflow-hidden">
+  <!-- Animated background dots -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-[#00e5a0]/5 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#00e5a0]/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 py-20 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+    <!-- Left content -->
+    <div class="animate-fade-in-up">
+      <div class="inline-flex items-center gap-2 border border-[#00e5a0]/40 rounded-full px-4 py-2 text-[#00e5a0] text-sm mb-8 bg-[#00e5a0]/5">
+        <span>⚡</span>
+        <span class="font-mono">Soluciones Web Profesionales</span>
+      </div>
+
+      <h1 class="text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+        Llevamos tu<br />
+        <span class="text-[#00e5a0]">negocio</span><br />
+        al siguiente nivel
+      </h1>
+
+      <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-xl font-mono">
+        Creamos páginas web profesionales adaptadas a las necesidades de tu empresa.
+        Desde landing pages hasta sistemas de gestión empresarial completos.
+      </p>
+
+      <div class="flex flex-wrap gap-4">
+        <a
+          routerLink="/planes"
+          class="bg-[#00e5a0] text-[#0a0f1e] font-bold px-8 py-4 rounded-lg hover:bg-[#00c88a] transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#00e5a0]/30 flex items-center gap-2"
+        >
+          Ver Planes →
+        </a>
+        <a
+          routerLink="/contactos"
+          class="border border-white/30 text-white font-semibold px-8 py-4 rounded-lg hover:border-[#00e5a0] hover:text-[#00e5a0] transition-all duration-300 hover:scale-105"
+        >
+          Contáctanos
+        </a>
+      </div>
+    </div>
+
+    <!-- Right - Logo -->
+    <div class="flex justify-center lg:justify-end animate-fade-in">
+      <div class="relative">
+        <!-- Container (responsive): base / md / lg -->
+        <div class="w-[20rem] h-[20rem] md:w-[28rem] md:h-[28rem] lg:w-[36rem] lg:h-[36rem] rounded-full bg-[#00e5a0]/10 flex items-center justify-center border border-[#00e5a0]/20 animate-glow">
+          <!-- Image (always a bit smaller than container) -->
+          <img src="/Logo.png" alt="MVSyntax Solutions" class="w-[16rem] h-[16rem] md:w-[24rem] md:h-[24rem] lg:w-[32rem] lg:h-[32rem] object-contain drop-shadow-2xl" />
+        </div>
+        <!-- Orbiting ring (slightly smaller than container, but larger than image) -->
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full border border-[#00e5a0]/20 animate-spin-slow w-[17rem] h-[17rem] md:w-[25rem] md:h-[25rem] lg:w-[23rem] lg:h-[33rem]"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section -->
+<section class="bg-[#060d1a] border-t border-[#00e5a0]/10 py-16">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-3 gap-8 text-center">
+    @for (stat of stats; track stat) {
+      <div class="group hover:-translate-y-1 transition-transform duration-300">
+        <div class="text-4xl font-bold text-[#00e5a0] mb-2">{{ stat.value }}</div>
+        <div class="text-gray-400 text-sm font-mono">{{ stat.label }}</div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- Why Us Section -->
+<section class="bg-[#0a0f1e] py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-[#00e5a0] font-mono text-sm mb-4">¿Por qué elegirnos?</p>
+      <h2 class="text-4xl font-bold text-white">Tecnología al servicio de tu negocio</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      @for (feature of features; track feature) {
+        <div class="bg-[#0d1526] border border-[#00e5a0]/10 rounded-2xl p-8 hover:border-[#00e5a0]/40 hover:-translate-y-2 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-[#00e5a0]/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-[#00e5a0]/20 transition-colors duration-300">
+            <span class="text-2xl">{{ feature.icon }}</span>
+          </div>
+          <h3 class="text-white font-bold text-xl mb-3">{{ feature.title }}</h3>
+          <p class="text-gray-400 leading-relaxed">{{ feature.desc }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="bg-gradient-to-r from-[#00e5a0]/10 to-[#0a0f1e] border-t border-b border-[#00e5a0]/20 py-20">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-4xl font-bold text-white mb-6">¿Listo para empezar?</h2>
+    <p class="text-gray-400 text-lg mb-10 font-mono">
+      Cuéntanos tu idea y te ayudamos a hacerla realidad.
+    </p>
+    <a
+      routerLink="/contactos"
+      class="bg-[#00e5a0] text-[#0a0f1e] font-bold px-10 py-4 rounded-lg hover:bg-[#00c88a] transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#00e5a0]/30 inline-block"
+    >
+      Hablemos ahora →
+    </a>
+  </div>
+</section>

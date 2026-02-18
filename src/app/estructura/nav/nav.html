@@ -1,1 +1,56 @@
-<p>nav works!</p>
+<nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0f1e]/95 backdrop-blur-sm border-b border-[#00e5a0]/10 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a routerLink="/inicio" class="flex items-center gap-3 group">
+      <img src="/Logo.png" alt="MVSyntax Logo" class="h-10 w-auto transition-transform duration-300 group-hover:scale-105" />
+      <div class="flex items-baseline gap-1">
+        <span class="text-white font-bold text-xl"><span class="text-[#00e5a0]">&lt;/&gt;</span> MVSyntax</span>
+        <span class="text-[#00e5a0] font-semibold text-xl">Solutions</span>
+      </div>
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="hidden md:flex items-center gap-8">
+      @for (item of navItems; track item) {
+        <li>
+          <a
+            [routerLink]="item.path"
+            routerLinkActive="border border-white rounded px-2 py-1"
+            class="text-white hover:text-[#00e5a0] font-medium transition-colors duration-300 cursor-pointer"
+          >{{ item.label }}</a>
+        </li>
+      }
+    </ul>
+
+    <!-- Mobile Hamburger -->
+    <button
+      (click)="toggleMenu()"
+      class="md:hidden text-white hover:text-[#00e5a0] transition-colors duration-300"
+    >
+      @if (!menuOpen) {
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      }
+      @if (menuOpen) {
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      }
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  @if (menuOpen) {
+    <div class="md:hidden bg-[#0a0f1e] border-t border-[#00e5a0]/10 px-6 py-4 flex flex-col gap-4 animate-fade-in">
+      @for (item of navItems; track item) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="text-[#00e5a0]"
+          (click)="menuOpen = false"
+          class="text-white hover:text-[#00e5a0] font-medium transition-colors duration-300 text-lg"
+        >{{ item.label }}</a>
+      }
+    </div>
+  }
+</nav>

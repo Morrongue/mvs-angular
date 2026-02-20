@@ -1,0 +1,41 @@
+/* Animated icons for servicios */
+.service-icon svg, .icon {
+  width: 36px;
+  height: 36px;
+}
+
+.anim-pulse { animation: pulse 2.4s ease-in-out infinite; }
+.float { animation: floatY 4s ease-in-out infinite; }
+.spin { animation: spin 1.6s linear infinite; transform-origin: center; }
+.swing { animation: swing 2s ease-in-out infinite; transform-origin: center; }
+
+.doc-lines { stroke-dasharray: 20; stroke-dashoffset: 20; animation: draw 1.6s ease-in-out infinite; }
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.06); opacity: 0.9; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes floatY {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes swing {
+  0% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+  100% { transform: rotate(-6deg); }
+}
+
+@keyframes draw {
+  0% { stroke-dashoffset: 20; }
+  50% { stroke-dashoffset: 0; }
+  100% { stroke-dashoffset: 20; }
+}

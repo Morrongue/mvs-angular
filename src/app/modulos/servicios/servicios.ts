@@ -7,6 +7,7 @@ import { NgFor, NgIf } from '@angular/common';
   standalone: true,
   imports: [RouterLink, NgFor, NgIf],
   templateUrl: './servicios.html',
+  styleUrls: ['./servicios.css'],
 })
 export class Servicios {
   services = [

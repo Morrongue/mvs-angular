@@ -1,7 +1,7 @@
 <nav class="fixed top-0 left-0 right-0 z-50 bg-[#0a0f1e]/95 backdrop-blur-sm border-b border-[#00e5a0]/10 transition-all duration-300">
   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
     <!-- Logo -->
-    <a routerLink="/inicio" class="flex items-center gap-3 group">
+    <a routerLink="/inicio" (click)="scrollTop()" class="flex items-center gap-3 group">
       <img src="/Logo.png" alt="MVSyntax Logo" class="h-10 w-auto transition-transform duration-300 group-hover:scale-105" />
       <div class="flex items-baseline gap-1">
         <span class="text-white font-bold text-xl"><span class="text-[#00e5a0]">&lt;/&gt;</span> MVSyntax</span>
@@ -16,11 +16,20 @@
           <a
             [routerLink]="item.path"
             routerLinkActive="border border-white rounded px-2 py-1"
+            (click)="scrollTop()"
             class="text-white hover:text-[#00e5a0] font-medium transition-colors duration-300 cursor-pointer"
           >{{ item.label }}</a>
         </li>
       }
     </ul>
+
+    <!-- Center clock -->
+    <div class="absolute left-1/2 transform -translate-x-1/2 text-center pointer-events-none">
+      <div class="nav-clock">
+        <div class="clock-face">{{ timeStr }}</div>
+        <div class="clock-date">{{ dateStr }}</div>
+      </div>
+    </div>
 
     <!-- Mobile Hamburger -->
     <button
@@ -47,7 +56,7 @@
         <a
           [routerLink]="item.path"
           routerLinkActive="text-[#00e5a0]"
-          (click)="menuOpen = false"
+          (click)="menuOpen = false; scrollTop()"
           class="text-white hover:text-[#00e5a0] font-medium transition-colors duration-300 text-lg"
         >{{ item.label }}</a>
       }

@@ -7,4 +7,11 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   templateUrl: './footer.html',
 })
-export class Footer {}
+export class Footer {
+  scrollTop() {
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
+  }
+}
+
+
+
